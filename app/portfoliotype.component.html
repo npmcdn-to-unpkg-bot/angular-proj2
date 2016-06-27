@@ -1,0 +1,13 @@
+<h2>Select a Portfolio Type That Closest Matches Your Plan</h2>
+<div class="grid grid-pad">
+	<div *ngFor="let plan of plans" (click)="selectPlan(plan)" class="col-1-4">
+		<div class="module plan">
+			<h4>{{plan.name}}</h4>
+		</div>
+	</div>
+	<div *ngIf="selectedPlan">
+		<h3>{{selectedPlan.name}}</h3>
+		<p>{{selectedPlan.details}}</p>
+		<button (click)="continue()">Continue</button>
+	</div>
+</div>

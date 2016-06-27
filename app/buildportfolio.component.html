@@ -1,0 +1,19 @@
+<h2>Build Portfolio</h2>
+<ul class="estates">
+	<li *ngFor="let estate of estates" (click)="onSelect(estate)" [class.selected]="estate === selectedEstate">
+		<span class="estate-element">
+			<span class="badge">{{estate.id}}</span>
+			{{estate.name}}<br>
+			Details:<br>
+			{{estate.details}}
+		</span>
+		<span *ngIf="selectedEstate.name==estate.name">
+			<button class="delete-button" (click)="delete(estate, $event)">Remove</button>
+		</span>
+	</li>
+</ul>
+
+<button (click)="addEstate()">Add New Estate</button>
+<div *ngIf="addingEstate">
+	<estate-detail (close)="close($event)"></estate-detail>
+</div>

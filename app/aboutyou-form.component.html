@@ -1,0 +1,72 @@
+<h2>Tell Us A Few Things About Yourself</h2>
+<p>To better customize your portfolio, please fill out these questions
+<div class="container">
+	<div [hidden]="submitted">
+		<form *ngIf="active" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+			<div class="form-group">
+				<label for="investment">1. How much are you looking to invest?</label>
+				<input type="text" class="form-control" required
+					[(ngModel)]="model.investment"
+						ngControl="investment"  #investment="ngForm" >
+				<div [hidden]="investment.valid || investment.pristine" class="alert alert-danger">
+					min. investment $35,000 required
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="year">2. How many years will you be holding this investment?</label>
+				<select class="form-control" required
+					[(ngModel)]="model.year"
+						ngControl="year" #year="ngForm" >
+					<option *ngFor="let p of years" [value]="p">{{p}}</option>
+				</select>
+				<div [hidden]="year.valid || year.pristine" class="alert alert-danger">
+					selection required
+				</div>
+			</div>
+
+			<button class="btn btn-default" (click)="back()">Back</button>
+			<button class="btn btn-default" [disabled]="!heroForm.form.valid" (click)="continue()">Continue</button>
+		</form>
+	</div>
+
+	<div [hidden]="!submitted">
+		<h2>You submitted the following:</h2>
+		<div class="row">
+			<div class="col-xs-3">Investment</div>
+			<div class="col-xs-9  pull-left">{{ model.investment }}</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">Years</div>
+			<div class="col-xs-9 pull-left">{{ model.year }}</div>
+		</div>
+		<br>
+		<button class="btn btn-default" (click)="submitted=false">Edit</button>
+	</div>
+</div>
+
+<div class="details">
+	<h3>{{selectedPlan.name}}</h3>
+	<p>{{selectedPlan.details}}</p>
+</div>
+
+<!-- ====================================================  -->
+	<div>
+		<form>
+
+			 <!-- ... all of the form ... -->
+
+		</form>
+	</div>
+
+<!-- ====================================================  -->
+<hr>
+<style>
+	.no-style .ng-valid {
+	border-left: 1px  solid #CCC
+}
+
+	.no-style .ng-invalid {
+	border-left: 1px  solid #CCC
+}
+</style>
