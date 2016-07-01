@@ -7,7 +7,8 @@
 	box-sizing: border-box;
 }
 h3 {
-	text-align: left;
+	color: midnightblue;
+	font-size: 20px;
 }
 [class*='col-'] {
 	padding-right: 20px;
@@ -23,38 +24,17 @@ h3 {
 	width: 25%;
 }
 .module {
+	border: 1px solid gainsboro;
 	padding: 20px;
 	text-align: center;
-	color: #eee;
-	max-height: 120px;
-	min-width: 120px;
-	background-color: #607D8B;
-	border-radius: 2px;
-}
-h4 {
-	position: relative;
+	height: 250px;
+	width: 250px;
 }
 .module:hover {
+	border: 2px solid midnightblue;
 	background-color: #EEE;
 	cursor: pointer;
-	color: #607d8b;
 }
-.grid-pad {
-	padding: 10px 0;
-}
-.grid-pad > [class*='col-']:last-of-type {
-	padding-right: 20px;
-}
-@media (max-width: 600px) {
-	.module {
-		font-size: 10px;
-		max-height: 75px; }
-}
-@media (max-width: 1024px) {
-	.grid {
-		margin: 0;
-	}
-	.module {
-		min-width: 60px;
-	}
+.buttonHolder{
+	text-align: center;
 }

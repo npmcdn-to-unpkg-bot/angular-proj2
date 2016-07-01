@@ -13,7 +13,7 @@ import { EstateDetailComponent } from './estate-detail.component';
 })
 export class BuildPortfolioComponent implements OnInit {
 	estates: Plan[];
-	selectedEstate: Plan = {name: ''};
+	selectedEstate: Plan
 	addingEstate = false;
 	error: any;
 

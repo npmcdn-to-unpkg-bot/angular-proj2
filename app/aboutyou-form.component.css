@@ -5,16 +5,14 @@ div.details {
 	display: inline-block;
 }
 button {
-	font-family: Arial;
-	background-color: #eee;
+	color: white; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 18px;
+	background-color: #6fdc6f;
 	border: none;
-	padding: 5px 10px;
-	border-radius: 4px;
+	padding: 10px 50px;
 	cursor: pointer;
 	cursor: hand;
-}
-button:hover {
-	background-color: #cfd8dc;
 }
 button:disabled {
 	background-color: #eee;
