@@ -13,17 +13,17 @@ export class PortfolioTypeComponent implements OnInit {
 
 	plans: Plan[] = [];
 	selectedPlan = this.sharedService.getSelected();
+	income_now_src="./assets/non_hover/income_now.svg";
+	target_date_income_src="./assets/non_hover/target_date_income.svg";
+	wealth_build_src="./assets/non_hover/wealth_build.svg";
+	wealth_protection_src="./assets/non_hover/wealth_protection.svg";
 
 	constructor(
 		private router: Router,
 		private sharedService: SharedService) {
-		this.income_now_src="./assets/non_hover/income_now.svg";
-		this.target_date_income_src="./assets/non_hover/target_date_income.svg";
-		this.wealth_build_src="./assets/non_hover/wealth_build.svg";
-		this.wealth_protection_src="./assets/non_hover/wealth_protection.svg";
 	}
 
-	hover(name) {
+	hover(name: string) {
 		name = this.scrubName(name);
 		if (name == "income_now" && this.selectedPlan.name != "Income Now") {
 			this.income_now_src = "./assets/hover_selected/income_now_hover.svg";
@@ -54,7 +54,7 @@ export class PortfolioTypeComponent implements OnInit {
 		}
 	}
 
-	scrubName(name) {
+	scrubName(name: string) {
 		return name.toLowerCase().replace(/ /g,"_");
 	}
 
