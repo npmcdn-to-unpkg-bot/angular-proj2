@@ -15,7 +15,8 @@ export class AboutYouFormComponent {
 	selectedPlan = this.sharedService.getSelected();
 	years = [10, 15, 30, "indefinite"];
 	styles = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"];
-	model = {investment: 35000, year: 10, funding: "non_ret", financing: "yes", style: "none"};
+	model = {investment: 35000, year: 10, funding: "non_ret", financing: "yes", style: "Moderate"};
+	valid = 0;
 
 	constructor(private router: Router, private sharedService: SharedService) {
 	}

@@ -46,7 +46,7 @@
 		</div>
 
 		<button class="btn btn-default" (click)="back()">Back</button>
-		<button class="btn btn-default" [disabled]="!AboutYouForm.form.valid" (click)="continue()">Continue</button>
+		<button class="btn btn-default" [disabled]="!AboutYouForm.form.valid || model.investment < 35000" (click)="continue()">Continue</button>
 	</form>
 
 	<form *ngIf="selectedPlan.name == 'Income Now'" (ngSubmit)="onSubmit()" #AboutYouForm="ngForm">
@@ -55,7 +55,7 @@
 			<input type="text" class="form-control" required
 				[(ngModel)]="model.investment"
 					ngControl="investment"  #investment="ngForm" >
-			<div [hidden]="investment.valid || investment.pristine" class="alert alert-danger">
+			<div *ngIf="model.investment < 35000 || investment.pristine" class="alert alert-danger">
 				min. investment $35,000 required
 			</div>
 		</div>
@@ -82,7 +82,7 @@
 		</div>
 
 		<button class="btn btn-default" (click)="back()">Back</button>
-		<button class="btn btn-default" [disabled]="!AboutYouForm.form.valid" (click)="continue()">Continue</button>
+		<button class="btn btn-default" [disabled]="!AboutYouForm.form.valid || model.investment < 35000" (click)="continue()">Continue</button>
 	</form>
 </div>
 

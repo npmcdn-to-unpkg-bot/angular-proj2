@@ -23,6 +23,11 @@ button:disabled {
 	color: #aaa; 
 	cursor: auto;
 }
+button:disabled:hover {
+	background-color: #eee;
+	color: #aaa; 
+	cursor: auto;
+}
 [class*='style'] {
 	float: left;
 }
