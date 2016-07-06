@@ -13,7 +13,7 @@ import { EstateDetailComponent } from './estate-detail.component';
 })
 export class BuildPortfolioComponent implements OnInit {
 	estates: Plan[];
-	selectedEstate: Plan
+	selectedEstate = this.sharedService.getSelected();
 	addingEstate = false;
 	error: any;
 
@@ -48,6 +48,11 @@ export class BuildPortfolioComponent implements OnInit {
 			})
 			.catch(error => this.error = error);
 	}
+
+	back() {
+		this.router.navigate(['About You']);
+	}
+
 
 	ngOnInit() {
 		this.getPlans();

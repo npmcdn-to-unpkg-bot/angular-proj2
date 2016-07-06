@@ -1,72 +1,93 @@
 <h2>Tell Us A Few Things About Yourself</h2>
 <p>To better customize your portfolio, please fill out these questions
 <div class="container">
-	<div [hidden]="submitted">
-		<form *ngIf="active" (ngSubmit)="onSubmit()" #heroForm="ngForm">
-			<div class="form-group">
-				<label for="investment">1. How much are you looking to invest?</label>
-				<input type="text" class="form-control" required
-					[(ngModel)]="model.investment"
-						ngControl="investment"  #investment="ngForm" >
-				<div [hidden]="investment.valid || investment.pristine" class="alert alert-danger">
-					min. investment $35,000 required
+	<form *ngIf="selectedPlan.name != 'Income Now'" (ngSubmit)="onSubmit()" #AboutYouForm="ngForm">
+		<div class="form-group">
+			<label for="investment">1. How much are you looking to invest?</label>
+			<input type="text" class="form-control" required
+				[(ngModel)]="model.investment"
+					ngControl="investment"  #investment="ngForm" >
+			<div *ngIf="model.investment < 35000 || investment.pristine" class="alert alert-danger">
+				min. investment $35,000 required
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="year">2. How many years will you be holding this investment?</label>
+			<select class="form-control" required
+				[(ngModel)]="model.year"
+					ngControl="year" #year="ngForm" >
+				<option *ngFor="let p of years" [value]="p">{{p}}</option>
+			</select>
+			<div [hidden]="year.valid || year.pristine" class="alert alert-danger">
+				selection required
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="year">3. What is your investment style?</label><br>
+			<div *ngFor="let style of styles" (click)="selectStyle(style)" class="style">
+				<div class="module style" [class.selected]="style === model.style">
+					{{style}}
 				</div>
 			</div>
+		</div>
+		<br><br><br><br><br><br><br>
+		<div class="form-group">
+			<label for="year">4. What is your source of funds?</label><br>
+			<input type="radio" [ngModel]="{checked: model.funding == 'non_ret'}" (ngModelChange)="model.funding='non_ret'"  name="funding" value="non_ret">Non-Retirement
+			<input type="radio" [ngModel]="{checked: model.funding == 'self_dir'}" (ngModelChange)="model.funding='self_dir'" name="funding" value="self_dir">Self Directed IRA
+		</div>
 
-			<div class="form-group">
-				<label for="year">2. How many years will you be holding this investment?</label>
-				<select class="form-control" required
-					[(ngModel)]="model.year"
-						ngControl="year" #year="ngForm" >
-					<option *ngFor="let p of years" [value]="p">{{p}}</option>
-				</select>
-				<div [hidden]="year.valid || year.pristine" class="alert alert-danger">
-					selection required
+		<div class="form-group">
+			<label for="year">5. Would you consider financing</label><br>
+			<input type="radio" [ngModel]="{checked: model.financing == 'yes'}" (ngModelChange)="model.financing='yes'"  name="financing" value="yes">Yes
+			<input type="radio" [ngModel]="{checked: model.financing == 'no'}" (ngModelChange)="model.financing='no'" name="financing" value="no">No
+		</div>
+
+		<button class="btn btn-default" (click)="back()">Back</button>
+		<button class="btn btn-default" [disabled]="!AboutYouForm.form.valid" (click)="continue()">Continue</button>
+	</form>
+
+	<form *ngIf="selectedPlan.name == 'Income Now'" (ngSubmit)="onSubmit()" #AboutYouForm="ngForm">
+		<div class="form-group">
+			<label for="investment">1. How much are you looking to invest?</label>
+			<input type="text" class="form-control" required
+				[(ngModel)]="model.investment"
+					ngControl="investment"  #investment="ngForm" >
+			<div [hidden]="investment.valid || investment.pristine" class="alert alert-danger">
+				min. investment $35,000 required
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="year">2. What is your investment style?</label><br>
+			<div *ngFor="let style of styles" (click)="selectStyle(style)" class="style">
+				<div class="module style" [class.selected]="style === model.style">
+					{{style}}
 				</div>
 			</div>
-
-			<button class="btn btn-default" (click)="back()">Back</button>
-			<button class="btn btn-default" [disabled]="!heroForm.form.valid" (click)="continue()">Continue</button>
-		</form>
-	</div>
-
-	<div [hidden]="!submitted">
-		<h2>You submitted the following:</h2>
-		<div class="row">
-			<div class="col-xs-3">Investment</div>
-			<div class="col-xs-9  pull-left">{{ model.investment }}</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-3">Years</div>
-			<div class="col-xs-9 pull-left">{{ model.year }}</div>
+		<br><br><br><br><br><br><br>
+		<div class="form-group">
+			<label for="year">3. What is your source of funds?</label><br>
+			<input type="radio" [ngModel]="{checked: model.funding == 'non_ret'}" (ngModelChange)="model.funding='non_ret'"  name="funding" value="non_ret">Non-Retirement
+			<input type="radio" [ngModel]="{checked: model.funding == 'self_dir'}" (ngModelChange)="model.funding='self_dir'" name="funding" value="self_dir">Self Directed IRA
 		</div>
-		<br>
-		<button class="btn btn-default" (click)="submitted=false">Edit</button>
-	</div>
+
+		<div class="form-group">
+			<label for="year">4. Would you consider financing</label><br>
+			<input type="radio" [ngModel]="{checked: model.financing == 'yes'}" (ngModelChange)="model.financing='yes'"  name="financing" value="yes">Yes
+			<input type="radio" [ngModel]="{checked: model.financing == 'no'}" (ngModelChange)="model.financing='no'" name="financing" value="no">No
+		</div>
+
+		<button class="btn btn-default" (click)="back()">Back</button>
+		<button class="btn btn-default" [disabled]="!AboutYouForm.form.valid" (click)="continue()">Continue</button>
+	</form>
 </div>
 
+<hr>
 <div class="details">
 	<h3>{{selectedPlan.name}}</h3>
 	<p>{{selectedPlan.details}}</p>
 </div>
-
-<!-- ====================================================  -->
-	<div>
-		<form>
-
-			 <!-- ... all of the form ... -->
-
-		</form>
-	</div>
-
-<!-- ====================================================  -->
-<hr>
-<style>
-	.no-style .ng-valid {
-	border-left: 1px  solid #CCC
-}
-
-	.no-style .ng-invalid {
-	border-left: 1px  solid #CCC
-}
-</style>

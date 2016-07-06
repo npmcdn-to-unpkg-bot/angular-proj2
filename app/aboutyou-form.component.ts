@@ -14,12 +14,14 @@ export class AboutYouFormComponent {
 
 	selectedPlan = this.sharedService.getSelected();
 	years = [10, 20, 30, 40, 50];
-	model = {investment: 0, year: 10}
-	submitted = false;
+	styles = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"];
+	model = {investment: 0, year: 10, funding: "non_ret", financing: "yes", style: "none"};
 
-	constructor(
-		private router: Router,
-		private sharedService: SharedService) {
+	constructor(private router: Router, private sharedService: SharedService) {
+	}
+
+	selectStyle(style: string) {
+		this.model.style = style;
 	}
 
 	back() {

@@ -35,6 +35,10 @@ h3 {
 	background-color: #EEE;
 	cursor: pointer;
 }
+.selected {
+	border: 2px solid midnightblue !important;
+	background-color: #EEE;
+}
 .buttonHolder{
 	text-align: center;
 }

@@ -13,7 +13,4 @@
 	</li>
 </ul>
 
-<button (click)="addEstate()">Add New Estate</button>
-<div *ngIf="addingEstate">
-	<estate-detail (close)="close($event)"></estate-detail>
-</div>
+<button class="btn btn-default" (click)="back()">Back</button>
