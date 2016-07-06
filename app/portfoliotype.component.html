@@ -3,6 +3,10 @@
 	<div *ngFor="let plan of plans" (click)="selectPlan(plan)" class="col-1-4">
 		<div class="module plan" [class.selected]="plan === selectedPlan">
 			<h3>{{plan.name}}</h3>
+			<img *ngIf="plan.name == 'Income Now'" [src]="income_now_src" (mouseover)="hover(plan.name)" (mouseout)="unhover()">
+			<img *ngIf="plan.name == 'Target Date Income'" [src]="target_date_income_src" (mouseover)="hover(plan.name)" (mouseout)="unhover()">
+			<img *ngIf="plan.name == 'Wealth Build'" [src]="wealth_build_src" (mouseover)="hover(plan.name)" (mouseout)="unhover()">
+			<img *ngIf="plan.name == 'Wealth Protection'" [src]="wealth_protection_src" (mouseover)="hover(plan.name)" (mouseout)="unhover()">
 		</div>
 	</div>
 	<div *ngIf="selectedPlan">

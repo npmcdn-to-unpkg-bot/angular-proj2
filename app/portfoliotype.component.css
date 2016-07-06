@@ -42,3 +42,8 @@ h3 {
 .buttonHolder{
 	text-align: center;
 }
+img {
+	float: bottom;
+	width: auto;
+	height: auto;
+}

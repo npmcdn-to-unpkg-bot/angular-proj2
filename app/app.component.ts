@@ -11,7 +11,7 @@ import { SharedService } from './shared.service';
 	selector: 'my-app',
 
 	template: `
-		<h1>{{title}}</h1>
+		<h1 style="color: dodgerblue;"><img src="./assets/house_icon.png" style="width:64px; height:52px;">{{title}}</h1>
 		<nav>
 			<a [routerLink]="['PortfolioType']">Portfolio Type</a>
 			<a [routerLink]="['AboutYou']">About You</a>

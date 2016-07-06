@@ -13,9 +13,9 @@ import { SharedService } from './shared.service';
 export class AboutYouFormComponent {
 
 	selectedPlan = this.sharedService.getSelected();
-	years = [10, 20, 30, 40, 50];
+	years = [10, 15, 30, "indefinite"];
 	styles = ["Conservative", "Moderately Conservative", "Moderate", "Moderately Aggressive", "Aggressive"];
-	model = {investment: 0, year: 10, funding: "non_ret", financing: "yes", style: "none"};
+	model = {investment: 35000, year: 10, funding: "non_ret", financing: "yes", style: "none"};
 
 	constructor(private router: Router, private sharedService: SharedService) {
 	}
