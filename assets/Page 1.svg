@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64px" height="52px" viewBox="0 0 64 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.615384615 1.23255814 63.0375385 1.23255814 63.0375385 0.61627907 0.615384615 0.61627907"></polygon>
+    </defs>
+    <g id="START-SEQUENCE" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="portfolio_hover" transform="translate(-207.000000, -3659.000000)">
+            <g id="Page-1" transform="translate(207.000000, 3659.000000)">
+                <polygon id="Stroke-1" stroke="#3E9DE6" stroke-linecap="round" stroke-linejoin="round" points="31.3329231 6.05974884 10.5907692 25.4478884 10.5907692 50.5711209 53.0621538 50.5711209 53.0621538 25.6450977"></polygon>
+                <g id="Group-5" transform="translate(0.000000, 50.113226)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-4"></g>
+                    <path d="M0.615384615,0.61627907 L63.0375385,0.61627907" id="Stroke-3" stroke="#3E9DE6" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-2)"></path>
+                </g>
+                <polyline id="Stroke-6" stroke="#3E9DE6" stroke-linecap="round" stroke-linejoin="round" points="24.5238154 50.4122442 24.5238154 35.0077326 39.1293538 35.0077326 39.1293538 50.4122442"></polyline>
+                <path d="M60.8382769,26.7031256 L52.4555077,19.3225674 C51.9472,18.8751488 51.5312,17.9544279 51.5312,17.2765209 L51.5312,5.97396279 C51.5312,5.29605581 50.9773538,4.74140465 50.3004308,4.74140465 L45.6505846,4.74140465 C44.9736615,4.74140465 44.4198154,5.29605581 44.4198154,5.97396279 L44.4198154,10.8487302 C44.4198154,11.5266372 44.0087385,11.7090558 43.5065846,11.2542419 L32.1145846,0.951288372 C31.6124308,0.496474419 30.7988923,0.506334884 30.3078154,0.97224186 L3.34904615,26.5244047" id="Stroke-8" stroke="#39B54A" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>
